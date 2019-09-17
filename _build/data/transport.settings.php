@@ -3,29 +3,29 @@
 $settings = array();
 $tmp = array(
     'text_title' => array(
-        'xtype' => 'areafield',
+        'xtype' => 'textfield',
         'value' => 'Заявка Принята!',
-        'area' => 'Текст заявки',
+        'area' => 'Заявка',
     ),
     'text_lead' => array(
-        'xtype' => 'areafield',
+        'xtype' => 'textarea',
         'value' => 'Хорошие новости, наши менеджеры уже собирают ваш заказ и готовят его к отправке.',
         'area' => 'Текст заявки',
     ),
     'text_question' => array(
-        'xtype' => 'areafield',
+        'xtype' => 'textarea',
         'value' => 'Если у Вас возникли вопросы по вашему заказу или условием его доставки. Обратитесь к менеджерам интернет-магазина "Бариста" по телефону <b>8 800 250-50-98</b>',
         'area' => 'Текст заявки',
     ),
 
     'text_time_of_delivery' => array(
-        'xtype' => 'areafield',
+        'xtype' => 'textarea',
         'value' => 'Заказы доставляются на следующий день с момента оформление заказа через интернет-магазин"</b>',
         'area' => 'Текст заявки',
     ),
 
     'text_thank' => array(
-        'xtype' => 'areafield',
+        'xtype' => 'textarea',
         'value' => '– Спасибо за заказ
 комманда интернет-магазина "Бариста"</b>',
         'area' => 'Текст заявки',
