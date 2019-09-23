@@ -27,7 +27,7 @@ $tmp = array(
     'text_thank' => array(
         'xtype' => 'textarea',
         'value' => '– Спасибо за заказ
-комманда интернет-магазина "Бариста"</b>',
+комманда интернет-магазина "Название магазина"</b>',
         'area' => 'Текст заявки',
     ),
 
@@ -67,6 +67,17 @@ $tmp = array(
         'area' => 'Контакты',
     ),
 
+    'system_log' => array(
+        'xtype' => 'combo-boolean',
+        'value' => '0',
+        'area' => 'Системные настройки',
+    ),
+
+    'system_field' => array(
+        'xtype' => 'textfield',
+        'value' => '0',
+        'area' => 'Системные настройки',
+    ),
 );
 foreach ($tmp as $k => $v) {
     /** @var modSystemSetting $setting */

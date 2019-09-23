@@ -1,5 +1,7 @@
 {var $site_url = ('site_url' | option) | preg_replace : '#/$#' : ''}
 {var $assets_url = 'assets_url' | option}
+{var $field = $_modx->config.em_system_field  | split : ','}
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -61,6 +63,7 @@
     h1, h2, h3, h4, h5, h6 {
       margin-bottom: 20px;
       line-height: 1.25;
+      font-weight: 800 !important;
     }
 
     h1 {
@@ -100,10 +103,27 @@
       margin-bottom: 20px;
     }
 
+    a {
+      color: #{$_modx->config.em_color_themes};
+    }
+
     h5 span {
       font-size: 12px;
       padding-left: 5px;
       color: #a59898;
+    }
+
+    .container ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .container ul > li {
+      padding: 10px 0;
+    }
+
+    .container ul > li+li {
+    border-top: 1px solid #dee2e6;
     }
 
     .container h1 {
@@ -219,7 +239,7 @@
                 </tr>
                 <tr>
                         <td>
-                         <h1>Заказ #{$num} <span>от {$address.create | date : 'd.m.Y'}</span></h1>
+                         <h1>{$_modx->config.em_text_title} #{$num} <span>от {$address.create | date : 'd.m.Y'}</span></h1>
                         </td>
                 </tr>
                 <tr>
@@ -228,19 +248,27 @@
                 </tr>
                     <td class="content">
 
+                        {if $_modx->config.em_system_log == 0}
+
+                        {block 'info'}
+
                         <h5>{$address.receiver},</h5>
                         <p>{$_modx->config.em_text_lead}</p>
 
                         <h6>Доставим его по адресу:</h6>
+
                         <p>{foreach $address as $key => $value}
-                          {if $value? && $key not in ['id','user_id','createdon','updatedon','email','properties,receiver','receiver']}
-                          {$value}&nbsp;
+                          {if $value? && $key in [$fieldset]}
+                          {$value}
                           {/if}
                           {/foreach}</p>
 
                         <h6>Время доставки:</h6>
                         <p>{$_modx->config.em_text_time_of_delivery}</p>
 
+                        {/block}
+
+                        {block 'products'}
                         <h6>Ваш заказ:</h6>
 
                         <table class="cart">
@@ -256,6 +284,10 @@
                           </tbody>
                         </table>
 
+                        {/block}
+
+                        {block 'text_question'}
+
                         <p>{$_modx->config.em_text_question}</p>
                         <p align="center">или</p>
 
@@ -267,14 +299,31 @@
                             <tr>
                                 <td align="center">
                                     <p>
-                                        <a class="button" href="mailto:{$.php.rawurlencode("$_modx->config.em_contact_mail")}?subject={$.php.rawurlencode("Заказ №$ordermail $receivermail на сумму $costmail руб")}">Написать письмо</a>
+                                        <a class="button" href="#">Написать письмо</a>
                                     </p>
                                 </td>
                             </tr>
                         </table>
 
-                        <p><em>{$_modx->config.em_text_thank}</em></p>
+                        {/block}
 
+                        {block 'text_thank'}
+                        <p><em>{$_modx->config.em_text_thank}</em></p>
+                        {/block}
+
+                        {block 'manager_form'}
+                        {/block}
+
+
+                    {else}
+                    <pre>
+                      {$product | print_r}
+                      {$total | print_r}
+                      {$address | print_r}
+                      {$delivery | print_r}
+                      {$payment | print_r}
+                    </pre>
+                    {/if}
                     </td>
                 </tr>
             </table>
