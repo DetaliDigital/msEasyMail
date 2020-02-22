@@ -5,7 +5,7 @@
 <h5><strong>Коллеги,</strong></h5>
 
 <p>
-В магазин <b>{$_modx->resource.site_name}</b> поступил новый заказ <b># {$num}</b>
+{$_modx->config.em_text_new_lead_manager}
 </p>
 
 {/block}
@@ -29,11 +29,22 @@
   {$address.phone}</li>
 {/if}
 <li><strong>Адрес:</strong>
+  {set $system_fields = [
   {foreach $address as $key => $value last=$last}
-  {if $value? && $key in list $field}
-  {$value}
-  {/if}
-  {/foreach}</li>
+    {if $value? && $key in list $field}
+        '{$key}' => '{$value}',
+    {/if}
+  {/foreach}
+  ]}
+
+  {foreach $system_fields as $item last=$last}
+    {if $last ?}
+        {$item}
+        {else}
+        {$item},
+    {/if}
+  {/foreach}
+</li>
 </ul>
 {if $address.comment?}
 <h5>Комментарий:</h5>
