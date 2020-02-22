@@ -293,15 +293,11 @@
                         <p>{$_modx->config.em_text_question}</p>
                         <p align="center">или</p>
 
-                        {set $receivermail = $address.receiver}
-                        {set $costmail = $total.cost}
-                        {set $ordermail = $order.num}
-
                         <table>
                             <tr>
                                 <td align="center">
                                     <p>
-                                        <a class="button" href="#">Написать письмо</a>
+                                        <a class="button" href="mailto:{'em_contact_mail' | option}?subject=RE:{$address.receiver}, номер заказа  #{$num} от {$address.create | date : 'd.m.Y'}">Написать письмо</a>
                                     </p>
                                 </td>
                             </tr>
