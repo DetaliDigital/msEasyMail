@@ -234,7 +234,7 @@
 
                 <tr>
                   <td align="center" class="tophead">
-                    <img align="center" width="150" src="{$site_url}/assets/components/mseasymail/img/logo.png">
+                    <img align="center" width="150" src="{$_modx->config.em_text_logo}">
                   </td>
                 </tr>
                 <tr>
@@ -283,6 +283,8 @@
                             {/foreach}
                           </tbody>
                         </table>
+
+                        <h5>Итого: {$total.cost} руб</h5>
 
                         {/block}
 
