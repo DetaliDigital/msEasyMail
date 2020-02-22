@@ -297,7 +297,7 @@
                             <tr>
                                 <td align="center">
                                     <p>
-                                        <a class="button" href="mailto:{'em_contact_mail' | option}?subject=RE:{$address.receiver}, номер заказа  #{$num} от {$address.create | date : 'd.m.Y'}">Написать письмо</a>
+                                        <a class="button" href="mailto:{'em_contact_mail' | option}?subject=RE:{$address.receiver}, номер заказа  #{$num} от {$address.create | date : 'd.m.Y'}">Задать вопрос</a>
                                     </p>
                                 </td>
                             </tr>
