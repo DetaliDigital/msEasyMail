@@ -29,21 +29,12 @@
   {$address.phone}</li>
 {/if}
 <li><strong>Адрес:</strong>
-  {set $system_fields = [
-  {foreach $address as $key => $value last=$last}
+  {foreach $address as $key => $value}
     {if $value? && $key in list $field}
-        '{$key}' => '{$value}',
+        {set $system_fields[$key] = $value}
     {/if}
   {/foreach}
-  ]}
-
-  {foreach $system_fields as $item last=$last}
-    {if $last ?}
-        {$item}
-        {else}
-        {$item},
-    {/if}
-  {/foreach}
+  {$system_fields | join : ', '}
 </li>
 </ul>
 {if $address.comment?}

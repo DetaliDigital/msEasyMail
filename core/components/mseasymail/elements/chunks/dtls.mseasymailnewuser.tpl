@@ -3,17 +3,18 @@
 {block 'info'}
 
 <h5>{$address.receiver},</h5>
-<p>{$_modx->config.em_text_lead}</p>
+<p>{$_modx->config.em_text_new_lead_user}</p>
 
-<h6>Доставим его по адресу:</h6>
+<h5>Доставим его по адресу:</h5>
 <p>
-  {foreach $address as $key => $value last=$last}
-  {if $value? && $key in list $field}
-  {$value}
-  {/if}
-  {/foreach}</p>
+  {foreach $address as $key => $value}
+    {if $value? && $key in list $field}
+        {set $system_fields[$key] = $value}
+    {/if}
+  {/foreach}
+  {$system_fields | join : ', '}</p>
 
-<h6>Время доставки:</h6>
+<h5>Условия доставки:</h5>
 <p>{$_modx->config.em_text_time_of_delivery}</p>
 
 {/block}
