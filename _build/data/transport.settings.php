@@ -97,7 +97,7 @@ $tmp = array(
         'area' => 'Шаблон заявки',
     ),
 
-    'text button' => array(
+    'text_button' => array(
         'xtype' => 'textfield',
         'value' => 'Задать вопрос',
         'area' => 'Шаблон заявки',

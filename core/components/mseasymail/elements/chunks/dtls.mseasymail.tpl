@@ -52,7 +52,7 @@
 
     .button {
       display: inline-block;
-      color: white;
+      color: #fff !important;
       background: #{$_modx->config.em_color_themes};
       border: solid #{$_modx->config.em_color_themes};
       border-width: 10px 20px 8px;
@@ -297,7 +297,7 @@
                             <tr>
                                 <td align="center">
                                     <p>
-                                        <a class="button" href="mailto:{'em_contact_mail' | option}?subject=RE:{$address.receiver}, номер заказа  #{$num} от {$address.create | date : 'd.m.Y'}">{'text button' | option}</a>
+                                        <a class="button" href="mailto:{'em_contact_mail' | option}?subject=RE:{$address.receiver}, номер заказа  #{$num} от {$address.create | date : 'd.m.Y'}">{'em_text_button' | option}</a>
                                     </p>
                                 </td>
                             </tr>
