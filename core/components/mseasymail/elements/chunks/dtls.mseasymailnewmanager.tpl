@@ -36,6 +36,14 @@
   {/foreach}
   {$system_fields | join : ', '}
 </li>
+{if $delivery.name ?}
+<li><strong>Доставка:</strong>
+  {$delivery.name}</li>
+{/if}
+{if $delivery.name ?}
+<li><strong>Оплата:</strong>
+  {$payment.name}</li>
+{/if}
 </ul>
 {if $address.comment?}
 <h5>Комментарий:</h5>
