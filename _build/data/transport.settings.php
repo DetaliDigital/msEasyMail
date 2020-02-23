@@ -79,6 +79,18 @@ $tmp = array(
         'area' => 'Текст заявки',
     ),
 
+    'text_no_address' => array(
+        'xtype' => 'textarea',
+        'value' => 'Наши менеджеры уточнят адрес доставки при подтверждении заказа.',
+        'area' => 'Текст заявки',
+    ),
+
+    'text_verifed_address' => array(
+        'xtype' => 'textarea',
+        'value' => 'Пожалуйста свяжитесь с клиентом для уточнения адреса доставки и подтверждения заказа.',
+        'area' => 'Текст заявки',
+    ),
+
     'text_logo' => array(
         'xtype' => 'textfield',
         'value' => '[[++site_url]][[++assets_url]]components/minishop2/img/web/ms2_small@2x.png',

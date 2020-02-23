@@ -222,7 +222,7 @@
       font-weight: bold;
     }
 
-    .dark-background .container .content.footer a, .dark-background .container .content.footer {
+    .dark-background .container .content.footer a, .dark-background .container .content.footer p{
       color: #fff
     }
 
@@ -269,11 +269,16 @@
 
                         <h6>Доставим его по адресу:</h6>
 
-                        <p>{foreach $address as $key => $value}
-                          {if $value? && $key in [$fieldset]}
-                          {$value}
+                        {foreach $address as $key => $value}
+                          {if $value? && $key in list $field}
+                              {set $system_fields[$key] = $value}
                           {/if}
-                          {/foreach}</p>
+                        {/foreach}
+                        {if $system_fields ?}
+                        <p>{$system_fields | join : ', '}</p>
+                        {else}
+                        <p>{'em_text_no_address' | option}</p>
+                        {/if}
 
                         <h6>Время доставки:</h6>
                         <p>{$_modx->config.em_text_time_of_delivery}</p>

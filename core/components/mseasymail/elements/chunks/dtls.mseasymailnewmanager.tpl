@@ -32,14 +32,19 @@
 <li><strong>Телефон:</strong>
   {$address.phone}</li>
 {/if}
-<li><strong>Адрес:</strong>
-  {foreach $address as $key => $value}
-    {if $value? && $key in list $field}
-        {set $system_fields[$key] = $value}
-    {/if}
-  {/foreach}
-  {$system_fields | join : ', '}
-</li>
+
+{foreach $address as $key => $value}
+  {if $value? && $key in list $field}
+      {set $system_fields[$key] = $value}
+  {/if}
+{/foreach}
+
+{if $system_fields ?}
+<li><strong>Адрес:</strong>{$system_fields | join : ', '}</li>
+{else}
+<li><strong>Адрес:</strong>{'em_text_verifed_address' | option}</li>
+{/if}
+
 {if $delivery.name ?}
 <li><strong>Доставка:</strong>
   {$delivery.name}</li>
