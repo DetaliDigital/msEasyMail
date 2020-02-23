@@ -1,4 +1,3 @@
-
 <?php
 $settings = array();
 $tmp = array(
@@ -95,6 +94,18 @@ $tmp = array(
     'color_themes' => array(
         'xtype' => 'textfield',
         'value' => '005bd1',
+        'area' => 'Шаблон заявки',
+    ),
+
+    'text_button' => array(
+        'xtype' => 'textfield',
+        'value' => 'Задать вопрос',
+        'area' => 'Шаблон заявки',
+    ),
+
+    'subject_button' => array(
+        'xtype' => 'textfield',
+        'value' => '{'em_contact_mail' | option}?subject=RE:{$address.receiver}, номер заказа  #{$num} от {$address.create | date : 'd.m.Y'}',
         'area' => 'Шаблон заявки',
     ),
 
