@@ -222,7 +222,7 @@
       font-weight: bold;
     }
 
-    .dark-background .container .content.footer a {
+    .dark-background .container .content.footer a, .dark-background .container .content.footer {
       color: #fff
     }
 
