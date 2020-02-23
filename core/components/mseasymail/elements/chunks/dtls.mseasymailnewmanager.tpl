@@ -24,6 +24,10 @@
 <li><strong>Имя:</strong>
   {$address.receiver}</li>
 {/if}
+{if $user.email ?}
+<li><strong>Почта:</strong>
+  {$user.email}</li>
+{/if}
 {if $address.phone ?}
 <li><strong>Телефон:</strong>
   {$address.phone}</li>
