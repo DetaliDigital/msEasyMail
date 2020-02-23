@@ -62,7 +62,7 @@ $tmp = array(
 
     'text_time_of_delivery' => array(
         'xtype' => 'textarea',
-        'value' => 'Заказы доставляются на следующий день с момента оформления заказа через интернет-магазин "[[+site_name]]"</b>',
+        'value' => 'Заказы доставляются на следующий день с момента оформления заказа через интернет-магазин "[[++site_name]]"</b>',
         'area' => 'Текст заявки',
     ),
 
@@ -97,15 +97,9 @@ $tmp = array(
         'area' => 'Шаблон заявки',
     ),
 
-    'text_button' => array(
+    'text button' => array(
         'xtype' => 'textfield',
         'value' => 'Задать вопрос',
-        'area' => 'Шаблон заявки',
-    ),
-
-    'subject_button' => array(
-        'xtype' => 'textfield',
-        'value' => '{'em_contact_mail' | option}?subject=RE:{$address.receiver}, номер заказа  #{$num} от {$address.create | date : 'd.m.Y'}',
         'area' => 'Шаблон заявки',
     ),
 
