@@ -40,9 +40,11 @@
 {/foreach}
 
 {if $system_fields ?}
-<li><strong>Адрес:</strong>{$system_fields | join : ', '}</li>
+<li><strong>Адрес:</strong>
+  {$system_fields | join : ', '}</li>
 {else}
-<li><strong>Адрес:</strong>{'em_text_verifed_address' | option}</li>
+<li><strong>Адрес:</strong>
+  {'em_text_verifed_address' | option}</li>
 {/if}
 
 {if $delivery.name ?}
