@@ -103,6 +103,12 @@ $tmp = array(
         'area' => 'Шаблон заявки',
     ),
 
+    'dark_background' => array(
+        'xtype' => 'combo-boolean',
+        'value' => '0',
+        'area' => 'Шаблон заявки',
+    ),
+
     'contact_name' => array(
         'xtype' => 'textfield',
         'value' => 'Интернет-магазин <a href="[[++site_url]]">[[++site_name]]</a>',

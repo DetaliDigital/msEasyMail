@@ -198,7 +198,6 @@
         font-size: 12px;
         padding-left: 5px;
         color: #a59898;
-
     }
 
     .container .content {
@@ -222,10 +221,23 @@
       text-decoration: none;
       font-weight: bold;
     }
+
+    .dark-background .container .content.footer a {
+      color: #fff
+    }
+
+    .dark-background h1 {
+      color: #fff;
+    }
+
+    .dark-background h1 span {
+    color: #fff;
+    }
+
     </style>
 </head>
 <body>
-<table class="body-wrap">
+<table class="body-wrap {if 'em_dark_background' | option == 1}dark-background{/if}">
     <tr>
         <td class="container">
 
