@@ -145,6 +145,13 @@ $tmp = array(
         'area' => 'Системные настройки',
     ),
 
+    'disable_delivery' => array(
+        'xtype' => 'combo-boolean',
+        'value' => '0',
+        'area' => 'Системные настройки',
+    ),
+
+
     'system_field' => array(
         'xtype' => 'textfield',
         'value' => 'city,street,building,room',

@@ -33,18 +33,21 @@
   {$address.phone}</li>
 {/if}
 
+{if $_modx->config.em_disable_delivery == 0}
+
 {foreach $address as $key => $value}
   {if $value? && $key in list $field}
       {set $system_fields[$key] = $value}
   {/if}
 {/foreach}
 
-{if $system_fields ?}
-<li><strong>Адрес:</strong>
-  {$system_fields | join : ', '}</li>
-{else}
-<li><strong>Адрес:</strong>
-  {'em_text_verifed_address' | option}</li>
+  {if $system_fields ?}
+  <li><strong>Адрес:</strong>
+    {$system_fields | join : ', '}</li>
+  {else}
+  <li><strong>Адрес:</strong>
+    {'em_text_verifed_address' | option}</li>
+  {/if}
 {/if}
 
 {if $delivery.name ?}

@@ -5,6 +5,7 @@
 <h5>{$address.receiver},</h5>
 <p>{$_modx->config.em_text_new_lead_user}</p>
 
+{if $_modx->config.em_disable_delivery == 0}
 <h5>Доставим его по адресу:</h5>
 
   {foreach $address as $key => $value}
@@ -20,5 +21,6 @@
 
 <h5>Условия доставки:</h5>
 <p>{$_modx->config.em_text_time_of_delivery}</p>
+{/if}
 
 {/block}
