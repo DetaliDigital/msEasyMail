@@ -48,11 +48,12 @@
   <li><strong>Адрес:</strong>
     {'em_text_verifed_address' | option}</li>
   {/if}
-{/if}
+
 
 {if $delivery.name ?}
 <li><strong>Доставка:</strong>
   {$delivery.name}</li>
+{/if}
 {/if}
 {if $delivery.name ?}
 <li><strong>Оплата:</strong>

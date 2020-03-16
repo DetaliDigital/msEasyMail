@@ -28,12 +28,29 @@
 <li><strong>Телефон:</strong>
   {$address.phone}</li>
 {/if}
+{if $_modx->config.em_disable_delivery == 0}
+{foreach $address as $key => $value}
+    {if $value? && $key in list $field}
+        {set $system_fields[$key] = $value}
+    {/if}
+{/foreach}
+
+{if $system_fields ?}
 <li><strong>Адрес:</strong>
-  {foreach $address as $key => $value last=$last}
-  {if $value? && $key in list $field}
-  {$value}
-  {/if}
-  {/foreach}</li>
+{$system_fields | join : ', '}</li>
+{else}
+<li><strong>Адрес:</strong>
+{'em_text_verifed_address' | option}</li>
+{/if}
+{if $delivery.name ?}
+<li><strong>Доставка:</strong>
+{$delivery.name}</li>
+{/if}
+{/if}
+{if $delivery.name ?}
+<li><strong>Оплата:</strong>
+{$payment.name}</li>
+{/if}
 </ul>
 {if $address.comment?}
 <h5>Комментарий:</h5>
