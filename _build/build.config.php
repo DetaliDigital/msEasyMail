@@ -2,7 +2,7 @@
 /* define package */
 define('PKG_NAME', 'msEasyMail');
 define('PKG_NAME_LOWER', strtolower(PKG_NAME));
-define('PKG_VERSION', '0.6.3');
+define('PKG_VERSION', '0.6.3.1');
 define('PKG_RELEASE', 'beta');
 define('PKG_AUTO_INSTALL', true);
 /* define paths */

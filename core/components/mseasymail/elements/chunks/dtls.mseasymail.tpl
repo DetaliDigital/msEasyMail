@@ -60,7 +60,9 @@
       border-radius: 4px;
     }
 
-    h1, h2, h3, h4, h5, h6 {
+    h1, h2, h3, h4, h5, h6,
+    .h1, .h2, .h3, .h4, .h5, .h6
+    {
       margin-bottom: 20px;
       line-height: 1.25;
       font-weight: 800 !important;
@@ -76,23 +78,34 @@
     color: #a59897;
     }
 
-    h2 {
+    h2,
+    .h2 {
       font-size: 28px;
     }
 
-    h3 {
+    h3,
+    .h3 {
       font-size: 24px;
     }
 
-    h4 {
+    h4,
+    .h4 {
       font-size: 20px;
     }
 
-    h5 {
+    h5,
+    .h5 {
       font-size: 16px;
+        color: #000000 !important;
     }
 
-    h6 {
+    .h5 {
+        display: block;
+        margin-bottom: 0;
+    }
+
+    h6,
+    .h6 {
       margin-bottom: 5px;
       font-size: 15px;
     }
@@ -107,7 +120,10 @@
       color: #{$_modx->config.em_color_themes};
     }
 
-    h5 span {
+    h5 span,
+    a > span,
+    .h5 span
+    {
       font-size: 12px;
       padding-left: 5px;
       color: #a59898;
@@ -295,7 +311,7 @@
                             {foreach $products as $product}
                             <tr>
                               <td><img align="center" width="70" src="{$site_url}{$product.thumb}"></td>
-                              <td><h5>{$product.pagetitle}<span>x{$product.count}</span></h5>
+                                <td><a class="h5" href="{$site_url}/{$product.id | url}">{$product.pagetitle}<span>x{$product.count}</span></a>
                               <span class="price">{$product.price} {'ms2_frontend_currency' | lexicon}</span>
                               </td>
                             </tr>

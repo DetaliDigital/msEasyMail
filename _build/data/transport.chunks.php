@@ -3,39 +3,39 @@ $chunks = array();
 $tmp = array(
     'tpl.msEasyMail' => array(
         'file' => 'mseasymail',
-        'description' => 'Основной чанк формы письма',
+        'description' => 'Основной чанк формы письма msEasyMail',
     ),
     'tpl.msEasyMail.new.user' => array(
         'file' => 'mseasymailnewuser',
-        'description' => 'Статус Новый заказ для пользователя',
+        'description' => 'Статус Новый заказ для пользователя msEasyMail',
     ),
     'tpl.msEasyMail.new.manager' => array(
         'file' => 'mseasymailnewmanager',
-        'description' => 'Статус Новый заказ для админисратора',
+        'description' => 'Статус Новый заказ для админисратора msEasyMail',
     ),
     'tpl.msEasyMail.pay.user' => array(
         'file' => 'mseasymailpayuser',
-        'description' => 'Статус Оплачен для пользователя',
+        'description' => 'Статус Оплачен для пользователя msEasyMail',
     ),
     'tpl.msEasyMail.pay.manager' => array(
         'file' => 'mseasymailpaymanager',
-        'description' => 'Статус Оплачен для админисратора',
+        'description' => 'Статус Оплачен для админисратора msEasyMail',
     ),
     'tpl.msEasyMail.cancelled.user' => array(
         'file' => 'mseasymailcancelleduser',
-        'description' => 'Статус Отменен для пользователя',
+        'description' => 'Статус Отменен для пользователя msEasyMail',
     ),
     'tpl.msEasyMail.cancelled.manager' => array(
         'file' => 'mseasymailcancelledmanager',
-        'description' => 'Статус Отменен для админисратора',
+        'description' => 'Статус Отменен для админисратора msEasyMail',
     ),
     'tpl.msEasyMail.sent.user' => array(
         'file' => 'mseasymailsentuser',
-        'description' => 'Статус Отправлен для пользователя',
+        'description' => 'Статус Отправлен для пользователя msEasyMail',
     ),
     'tpl.msEasyMail.sent.manager' => array(
         'file' => 'mseasymailsentmanager',
-        'description' => 'Статус Отправлен для админисратора',
+        'description' => 'Статус Отправлен для админисратора msEasyMail',
     ),
 );
 // Save chunks for setup options
