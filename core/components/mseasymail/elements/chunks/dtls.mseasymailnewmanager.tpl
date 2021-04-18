@@ -55,7 +55,7 @@
   {$delivery.name}</li>
 {/if}
 {/if}
-{if $delivery.name ?}
+{if $payment.name ?}
 <li><strong>Оплата:</strong>
   {$payment.name}</li>
 {/if}
